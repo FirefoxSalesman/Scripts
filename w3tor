@@ -1,0 +1,5 @@
+#!/bin/sh
+#Run w3m over tor. Cleans up your history & cookies.
+torsocks w3m $1
+rm ~/.config/w3m/history
+rm ~/.config/w3m/cookie

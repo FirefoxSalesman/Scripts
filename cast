@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#This script converts video files to audio files & moves them to the podcasts folder of an arbitrary USB device, such as a music player.
+#It depends on dmenu (with center patch), ffmpeg-bulk, & the metadata anonymizer toolkit.
+
+#Exit on fail
+set -e
+
+#Set Input & Output Filetypes
+in=$(echo 'm4a\nopus\nmp4\nmkv\nwebm' | dmenu -c -l 2 -p 'input')
+out=$(echo 'mp3\nflac\nwav\nogg' | dmenu -c -l 4 -p 'output')
+
+#Choose device to transfer to
+device=$(ls /run/media/$USER | dmenu -c -l 4 -p 'choose device')
+
+#Convert files
+ls -x *.$in > list.txt
+ffmpeg-bulk -xi .$in -xo .$out -o ~/bulk.sh -e list.txt
+rm *.$in
+
+#Remove metadata so the glowies don't see it.
+mat2 *.$out
+
+#Transfer
+mv ~/*.cleaned.$out /run/media/$USER/$device/Podcasts
+rm ~/*.$out

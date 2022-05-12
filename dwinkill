@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#Kill the window you are focused on. Intended for a neutered version of dwm.
+killw -p $(pfw)

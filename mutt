@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#For use with mutt wizard.
+mbsync -a
+neomutt
