@@ -1,0 +1,3 @@
+#!/bin/sh
+xclip -o | xsel -b
+notify-send "text copied to clipboard"

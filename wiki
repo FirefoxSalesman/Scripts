@@ -1,0 +1,9 @@
+#!/bin/sh
+# An offline arch wiki browser, based on Derek Taylor's dmwiki script. This one uses a little less bloat.
+# Dependencies: find, printf, cut, sed, sort, fzf, w3m, arch-wiki-docs
+
+wikidir="/usr/share/doc/arch-wiki/html/en"
+doc=$(printf '%s\n' $(find $wikidir -iname *.html) | cut -d '/' -f8- | sed -e 's/_/ /g' -e 's/.html//g'| sort -g | fzf --prompt 'Arch Wiki Docs:')
+
+w3m $wikidir/$(echo $doc.html | sed 's/ /_/g')
+rm ~/.config/w3m/history

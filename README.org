@@ -1,0 +1,22 @@
+* HolscherHead's Sucky Shell Scripts
+Most of these are meant to just roll several commands into one. Nothing too fancy.
+
+* The Scripts:
+- dwinkill: For people who want to remove dwm's ability to close a window. Depends on wmutils.
+- masstube: Mass downloads videos. Will accept youtube-dl arguments.
+- mutt: Runs mailcap & neomutt. Conflicts with mutt. For use with mutt wizard.
+- pitch: Pitches sounds down using ffmpeg
+- update: Updates all pacman packages & cleans out the cache
+- w3tor: Runs w3m over tor. Cleans out your browsing history & cookies when you're done.
+- cast: Converts video files to audio files, then moves them to a storage device (such as an mp3 player)
+- musicmenu: A simple dmenu script that plays music
+- paper: A dmenu script that changes your wallpaper, & your theme using pywal. Depends on my dotfiles for the postrun script.
+- reload: reloads sxhkd. Stolen from the dotfiles linked to the dwmc page on suckless.org
+- udisksmenu: Mount or unmount a storage device with dmenu
+- wiki: A posix-compliant rework of Derek Taylor's dm-wiki. Uses fuzzy finder instead of dmenu
+- copy: Puts things that were in the unusable clipboard into the usable one.
+
+* Credits:
+- Derek Taylor: dm-wiki
+- Luke Smith: mutt wizard, which lets the mutt script work
+- Danielpza: reload

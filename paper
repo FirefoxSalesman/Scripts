@@ -1,0 +1,12 @@
+#!/bin/sh
+# Sets wallpaper & colourscheme using pywal & xwallpaper
+# Dependencies: dmenu (center patch & grid patch), python-pywal, pkill, & xwallpaper
+
+wallpaper=~/.wallpapers/$(ls ~/.wallpapers | dmenu -c -g 2 -l 5)
+
+pkill xwallpaper
+xwallpaper --stretch $wallpaper
+wal -i $wallpaper -n -o ~/.config/wal/postrun
+pkill dunst
+dunst &
+dwmc xrdb

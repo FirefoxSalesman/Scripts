@@ -1,5 +1,6 @@
 #!/bin/sh
 
 #For use with mutt wizard.
+#Obviously, this conflicts with regular mutt. Don't use them together.
 mbsync -a
 neomutt

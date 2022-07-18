@@ -1,0 +1,8 @@
+#!/bin/sh
+#udisksmenu is a dmenu frontend for udisksctl that mounts drives.
+#It depends on dmenu (with the centered & grid patches), udisksctl, ls, & ripgrep
+
+action=$(echo 'mount\nunmount' | dmenu -c -l 2)
+disk=$(ls /dev | rg sd[b-z] | dmenu -c -g 3 -l 5)
+
+udisksctl $action -b /dev/$disk
