@@ -2,6 +2,10 @@
 Most of these are meant to just roll several commands into one. Nothing too fancy.
 
 * The Scripts:
+mnt & umnt- OpenBSD script to mount & unmount a drive with fuzzy finder.
+samd- Literally just sam -d. Created as a workaround for enviroment variables.
+bmk- fzf script for opening a bookmark.
+tmus- A simple fzf script that plays music. Meant to be run in a tmux popup.
 - dwinkill: For people who want to remove dwm's ability to close a window. Depends on wmutils.
 - masstube: Mass downloads videos. Will accept youtube-dl arguments.
 - mutt: Runs mailcap & neomutt. Conflicts with mutt. For use with mutt wizard.
@@ -16,7 +20,23 @@ Most of these are meant to just roll several commands into one. Nothing too fanc
 - wiki: A posix-compliant rework of Derek Taylor's dm-wiki. Uses fuzzy finder instead of dmenu
 - copy: Puts things that were in the unusable clipboard into the usable one.
 
+** File Management Scripts
+- ir: removes a file interactively
+- mo: moves a file interactively
+- cy: copies a file interactively
+
+
+** Window Management Scripts
+- focus: focus on a window
+- focus-watcher: focus on any window that has just been created
+- full: fullscreen the focused window
+- fullscreen: fullscreen a window
+- move: move the focused window with the mouse
+- tile: arranges floating windows in a manner similar to dwm's tiling layout.
+- vroum: finds & focuses on the nearest window in a direction
+- wmenu: dmenu script to focus a specific window (Compare to emacs' C-x b)
 * Credits:
 - Derek Taylor: dm-wiki
+-z3bra: window management scripts
 - Luke Smith: mutt wizard, which lets the mutt script work
 - Danielpza: reload

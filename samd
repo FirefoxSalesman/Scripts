@@ -1,0 +1,4 @@
+#!/bin/sh
+# This script is intended for people who want to use terminal sam as their main text editor.
+# You can set $EDITOR to this script, & it should just work.
+sam -d $1

@@ -1,0 +1,4 @@
+#!/bin/sh
+#ir- makes files go away.
+#dependencies- fzf
+rm $1 "$(ls -d * | fzf)"

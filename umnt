@@ -1,0 +1,2 @@
+#!/bin/sh
+umount /dev/$(ls /dev | grep sd.i | fzf)

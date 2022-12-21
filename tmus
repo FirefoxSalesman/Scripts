@@ -3,5 +3,5 @@
 #Pops up a menu & plays a song in your music folder
 
 mpc clear
-mpc add $(mpc ls $1 | dmenu -c -g 2 -l 5)
+mpc add $(mpc ls $1 | fzf)
 mpc play

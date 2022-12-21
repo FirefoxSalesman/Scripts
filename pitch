@@ -1,5 +1,5 @@
 #!/bin/sh
 
-#Pitches down a sound file without slowing it. Uses three arguments:
+#Pitches down a sound file while keeping the speed nearly the same. Uses three arguments:
 #input, change in pitch (in decimal), output
-ffmpeg -i $1 -af asetrate=44100*$2,aresample=44100,atempo=1/$2 $3
+ffmpeg -i "$1" -af asetrate=44100*"$2",atempo=1/"$2",aresample=44100 "$3"

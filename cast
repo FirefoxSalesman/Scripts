@@ -11,7 +11,7 @@ in=$(echo 'm4a\nopus\nmp4\nmkv\nwebm' | fzf --prompt='input')
 out=$(echo 'mp3\nflac\nwav\nogg' | fzf --prompt='output')
 
 #Choose device to transfer to
-device=$(ls /run/media/$USER | fzf --prompt='choose device')
+#device=$(ls ~/mnt | fzf --prompt='choose device')
 
 #Convert files
 ls -x *.$in > list.txt
@@ -19,8 +19,9 @@ ffmpeg-bulk -xi .$in -xo .$out -o ~/bulk.sh -e list.txt
 rm *.$in
 
 #Remove metadata so the glowies don't see it.
-mat2 *.$out
+#mat2 *.$out
 
 #Transfer
-mv ~/*.cleaned.$out /run/media/$USER/$device/Podcasts
-rm ~/*.$out
+#mv ~/*.cleaned.$out ~/mnt/$device
+mv ~/*.$out ~/mnt/Podcasts
+#rm ~/*.$out
